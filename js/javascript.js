@@ -24,7 +24,7 @@ function newBoard(){
 	for(var i = 0; i < arreglo_memoria.length; i++){
 		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+arreglo_memoria[i]+'\')"></div>';
 	}
-	document.getElementById('memory_board').innerHTML = output;
+	document.getElementById('tablero_memoria').innerHTML = output;
 }
 //funcion que recibe como parametro las cartas y sus valores para así comparar si son iguales controlando si se muestra o no la carta
 function memoryFlipTile(carta,val){
@@ -45,7 +45,7 @@ function memoryFlipTile(carta,val){
 				// Check to see if the whole board is cleared
 				if(tiles_flipped == arreglo_memoria.length){
 					alert("Board cleared... generating new board");
-					document.getElementById('memory_board').innerHTML = "";
+					document.getElementById('tablero_memoria').innerHTML = "";
 					newBoard();
 				}
 			} else {
