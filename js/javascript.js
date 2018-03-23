@@ -17,7 +17,7 @@ Array.prototype.memory_tile_shuffle = function(){
 }
 
 //función qie realiza la carga de un nuevo tablero
-function newBoard(){
+function tablero_nuevo(){
 	tiles_flipped = 0;
 	var output = '';
     arreglo_memoria.memory_tile_shuffle();
@@ -46,7 +46,7 @@ function memoryFlipTile(carta,val){
 				if(tiles_flipped == arreglo_memoria.length){
 					alert("Terminaste!");
 					document.getElementById('tablero_memoria').innerHTML = "";
-					newBoard();
+					tablero_nuevo();
 				}
 			} else {
 				function flip2Back(){
