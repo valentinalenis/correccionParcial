@@ -4,6 +4,8 @@ var arreglo_memoria = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','
 var valores_memoria = [];
 var memoria_ids = [];
 var tiles_flipped = 0;
+
+//funcion que define un arreglo el cual maneja el orden.
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -13,6 +15,8 @@ Array.prototype.memory_tile_shuffle = function(){
         this[i] = temp;
     }
 }
+
+//función qie realiza la carga de un nuevo tablero
 function newBoard(){
 	tiles_flipped = 0;
 	var output = '';
@@ -22,6 +26,7 @@ function newBoard(){
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
+//funcion que recibe como parametro las cartas y sus valores para así comparar si son iguales controlando si se muestra o no
 function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && valores_memoria.length < 2){
 		tile.style.background = '#FFF';
