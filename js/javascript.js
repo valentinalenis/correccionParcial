@@ -26,17 +26,17 @@ function newBoard(){
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
-//funcion que recibe como parametro las cartas y sus valores para así comparar si son iguales controlando si se muestra o no
-function memoryFlipTile(tile,val){
-	if(tile.innerHTML == "" && valores_memoria.length < 2){
-		tile.style.background = '#FFF';
-		tile.innerHTML = val;
+//funcion que recibe como parametro las cartas y sus valores para así comparar si son iguales controlando si se muestra o no la carta
+function memoryFlipTile(carta,val){
+	if(carta.innerHTML == "" && valores_memoria.length < 2){
+		carta.style.background = '#FFF';
+		carta.innerHTML = val;
 		if(valores_memoria.length == 0){
 			valores_memoria.push(val);
-			memoria_ids.push(tile.id);
+			memoria_ids.push(carta.id);
 		} else if(valores_memoria.length == 1){
 			valores_memoria.push(val);
-			memoria_ids.push(tile.id);
+			memoria_ids.push(carta.id);
 			if(valores_memoria[0] == valores_memoria[1]){
 				tiles_flipped += 2;
 				// Clear both arrays
@@ -51,12 +51,12 @@ function memoryFlipTile(tile,val){
 			} else {
 				function flip2Back(){
 				    // Flip the 2 tiles back over
-				    var tile_1 = document.getElementById(memoria_ids[0]);
-				    var tile_2 = document.getElementById(memoria_ids[1]);
-				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
-            	    tile_1.innerHTML = "";
-				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
-            	    tile_2.innerHTML = "";
+				    var carta_1 = document.getElementById(memoria_ids[0]);
+				    var carta_2 = document.getElementById(memoria_ids[1]);
+				    carta_1.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    carta_1.innerHTML = "";
+				    carta_2.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    carta_2.innerHTML = "";
 				    // Clear both arrays
 				    valores_memoria = [];
             	    memoria_ids = [];
