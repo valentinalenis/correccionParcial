@@ -50,14 +50,14 @@ function memoryFlipTile(carta,val){
 				}
 			} else {
 				function flip2Back(){
-				    // Flip the 2 tiles back over
+				    // voltea las dos cartas
 				    var carta_1 = document.getElementById(memoria_ids[0]);
 				    var carta_2 = document.getElementById(memoria_ids[1]);
 				    carta_1.style.background = 'url(tile_bg.jpg) no-repeat';
             	    carta_1.innerHTML = "";
 				    carta_2.style.background = 'url(tile_bg.jpg) no-repeat';
             	    carta_2.innerHTML = "";
-				    // Clear both arrays
+				    // restaura los valores de los arreglos
 				    valores_memoria = [];
             	    memoria_ids = [];
 				}
