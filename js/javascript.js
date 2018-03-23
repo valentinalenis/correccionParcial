@@ -39,12 +39,12 @@ function memoryFlipTile(carta,val){
 			memoria_ids.push(carta.id);
 			if(valores_memoria[0] == valores_memoria[1]){
 				tiles_flipped += 2;
-				// Clear both arrays
+				// vacia los arreglos
 				valores_memoria = [];
             	memoria_ids = [];
-				// Check to see if the whole board is cleared
+				// se fija que ya no haya cartas disponibles para girar
 				if(tiles_flipped == arreglo_memoria.length){
-					alert("Board cleared... generating new board");
+					alert("Terminaste!");
 					document.getElementById('tablero_memoria').innerHTML = "";
 					newBoard();
 				}
