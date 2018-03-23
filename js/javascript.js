@@ -2,8 +2,8 @@
 // Scripted By Adam Khoury in connection with the following video tutorial:
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
 var arreglo_memoria = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
-var memory_values = [];
-var memory_tile_ids = [];
+var valores_memoria = [];
+var memoria_ids = [];
 var tiles_flipped = 0;
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
@@ -24,20 +24,20 @@ function newBoard(){
 	document.getElementById('memory_board').innerHTML = output;
 }
 function memoryFlipTile(tile,val){
-	if(tile.innerHTML == "" && memory_values.length < 2){
+	if(tile.innerHTML == "" && valores_memoria.length < 2){
 		tile.style.background = '#FFF';
 		tile.innerHTML = val;
-		if(memory_values.length == 0){
-			memory_values.push(val);
-			memory_tile_ids.push(tile.id);
-		} else if(memory_values.length == 1){
-			memory_values.push(val);
-			memory_tile_ids.push(tile.id);
-			if(memory_values[0] == memory_values[1]){
+		if(valores_memoria.length == 0){
+			valores_memoria.push(val);
+			memoria_ids.push(tile.id);
+		} else if(valores_memoria.length == 1){
+			valores_memoria.push(val);
+			memoria_ids.push(tile.id);
+			if(valores_memoria[0] == valores_memoria[1]){
 				tiles_flipped += 2;
 				// Clear both arrays
-				memory_values = [];
-            	memory_tile_ids = [];
+				valores_memoria = [];
+            	memoria_ids = [];
 				// Check to see if the whole board is cleared
 				if(tiles_flipped == arreglo_memoria.length){
 					alert("Board cleared... generating new board");
@@ -47,15 +47,15 @@ function memoryFlipTile(tile,val){
 			} else {
 				function flip2Back(){
 				    // Flip the 2 tiles back over
-				    var tile_1 = document.getElementById(memory_tile_ids[0]);
-				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    var tile_1 = document.getElementById(memoria_ids[0]);
+				    var tile_2 = document.getElementById(memoria_ids[1]);
 				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
             	    tile_1.innerHTML = "";
 				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
             	    tile_2.innerHTML = "";
 				    // Clear both arrays
-				    memory_values = [];
-            	    memory_tile_ids = [];
+				    valores_memoria = [];
+            	    memoria_ids = [];
 				}
 				setTimeout(flip2Back, 700);
 			}
