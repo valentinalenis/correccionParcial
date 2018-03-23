@@ -1,7 +1,7 @@
 
 // Scripted By Adam Khoury in connection with the following video tutorial:
 // http://www.youtube.com/watch?v=c_ohDPWmsM0
-var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+var arreglo_memoria = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
@@ -17,9 +17,9 @@ Array.prototype.memory_tile_shuffle = function(){
 function newBoard(){
 	tiles_flipped = 0;
 	var output = '';
-    memory_array.memory_tile_shuffle();
-	for(var i = 0; i < memory_array.length; i++){
-		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+    arreglo_memoria.memory_tile_shuffle();
+	for(var i = 0; i < arreglo_memoria.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+arreglo_memoria[i]+'\')"></div>';
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
@@ -39,7 +39,7 @@ function memoryFlipTile(tile,val){
 				memory_values = [];
             	memory_tile_ids = [];
 				// Check to see if the whole board is cleared
-				if(tiles_flipped == memory_array.length){
+				if(tiles_flipped == arreglo_memoria.length){
 					alert("Board cleared... generating new board");
 					document.getElementById('memory_board').innerHTML = "";
 					newBoard();
